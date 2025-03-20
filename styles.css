@@ -1,0 +1,236 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #00b7ff;
+    --text-color: #ffffff;
+    --background-gradient-start: #111111;
+    --background-gradient-end: #1a1a1a;
+    --nav-bg: #000000;
+    --nav-text: #ffffff;
+    --card-bg: #1d1d1d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--background-gradient-start);
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+    min-height: 100vh;
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--nav-bg);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav a {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+    text-transform: lowercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    text-transform: lowercase;
+    font-weight: 600;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    margin: 1.5rem 0;
+    font-size: 1.8rem;
+    letter-spacing: -0.3px;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card img {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.project-card h2 {
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* About Section */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-section > div:first-child {
+    width: 300px;
+}
+
+.headshot {
+    width: 100%;
+    border-radius: 12px;
+    border: 3px solid var(--secondary-color);
+}
+
+/* Description Lists */
+dl {
+    margin: 1.5rem 0;
+}
+
+dt {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 1rem;
+    text-transform: lowercase;
+}
+
+dd {
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+/* Lists */
+ul, ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    color: var(--text-color);
+}
+
+/* Links */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+strong {
+    color: var(--primary-color);
+    text-transform: lowercase;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+} 
